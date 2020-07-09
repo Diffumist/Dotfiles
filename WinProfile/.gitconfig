@@ -14,5 +14,5 @@
 [credential]
 	helper = cache
 [commit]
-	gpgsign = true
+	gpgsign = 
 
