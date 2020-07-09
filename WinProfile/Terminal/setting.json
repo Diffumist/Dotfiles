@@ -21,8 +21,8 @@
     "profiles": {
         "defaults": {
             // 所有 Profile 共用的设置可以放这里
-            // 字体设置
             "colorScheme": "Tango Dark",
+            // 字体设置
             "fontFace": "JetBrainsMono Nerd Font Mono",
             "fontSize": 11,
             // 光标类型，可选值 "vintage" ( ▃ ), "bar" ( ┃ ), "underscore" ( ▁ ), "filledBox" ( █ ), "emptyBox" ( ▯ )
@@ -64,11 +64,6 @@
                 "icon": "%USERPROFILE%\\ubuntu.png",
                 "source": "Windows.Terminal.Wsl"
 
-            },
-            {
-                "hidden": false,
-                "name": "Ubuntu-20.04",
-                "source": "Windows.Terminal.Wsl"
             }
         ]
     },

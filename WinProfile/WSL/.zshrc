@@ -104,15 +104,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# WSL2 网络配置
 export WIN_IP=`cat /etc/resolv.conf | grep nameserver | awk '{print $2}'`
-cp -f /etc/proxychains.conf ~/.proxychains.conf
-sed -i '/\[ProxyList\]/,$d' ~/.proxychains.conf
 sed -i '/\[http]/,$d' ~/.gitconfig
 echo -e '[http]\nproxy=socks5://'${WIN_IP}':7890\n[https]\nproxy=socks5://'${WIN_IP}':7890' >> ~/.gitconfig
 sed -i '/socks5.*/d' ~/.curlrc
 echo 'socks5='${WIN_IP}':7890' >> ~/.curlrc
-echo -e '[ProxyList]\nsocks5 '${WIN_IP}' 7890' >> ~/.proxychains.conf
-alias pc='proxychains4 -q -f ~/.proxychains.conf'
+# WSL1 配置删除以上
 export ALL_PROXY=socks5://'${WIN_IP}':7890
 export all_proxy=socks5://'${WIN_IP}':7890
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
