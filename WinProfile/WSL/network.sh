@@ -41,4 +41,4 @@ fi
 
 
 echo 'WSL代理配置已初始化'
-curl https://ifconfig.me/
+curl -L -s ifconfig.me

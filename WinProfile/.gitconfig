@@ -6,7 +6,6 @@
 [core]
 	autocrlf = true
 	safecrlf = true
-	excludesfile = ~/.gitignore_global
 [http]
 	proxy = socks5://127.0.0.1:7890
 [https]
