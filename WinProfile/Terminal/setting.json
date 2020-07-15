@@ -36,15 +36,17 @@
             "acrylicOpacity": 0.8
         },
         "list": [{
+                // Make changes here to the powershell.exe profile.
                 "name": "Windows PowerShell",
-                "commandline": "powershell.exe",
-                "icon": "%USERPROFILE%\\terminal.ico",
+                "commandline": "powershell.exe -nologo",
+                "icon": "%USERPROFILE%\\Terminal\\src\\powershell.png",
                 "hidden": false
             },
             {
+                // Make changes here to the cmd.exe profile.
                 "name": "CMD",
                 "commandline": "cmd.exe",
-                "icon": "%USERPROFILE%\\terminal.ico",
+                "icon": "%USERPROFILE%\\Terminal\\src\\cmd.png",
                 "hidden": false
             },
             {
@@ -55,15 +57,14 @@
             {
                 "hidden": false,
                 "name": "Arch",
-                "icon": "%USERPROFILE%\\Arch.ico",
+                "icon": "%USERPROFILE%\\Terminal\\src\\Arch.png",
                 "source": "Windows.Terminal.Wsl"
             },
             {
                 "hidden": false,
                 "name": "Ubuntu",
-                "icon": "%USERPROFILE%\\ubuntu.png",
+                "icon": "%USERPROFILE%\\Terminal\\src\\ubuntu.png",
                 "source": "Windows.Terminal.Wsl"
-
             }
         ]
     },

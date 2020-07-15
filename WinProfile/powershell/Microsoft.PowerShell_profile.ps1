@@ -21,7 +21,6 @@ function UpdateScoop { scoop update; scoop update * }
 
 Import-Module posh-git
 Import-Module oh-my-posh
-# $DefaultUser = 'spenc'
 
 # Setup other alias
 Set-Alias open Invoke-Item
@@ -31,7 +30,7 @@ Set-Alias gst GitStat
 Set-Alias myip GetMyIp
 Set-Alias scu UpdateScoop
 # Set theme
-Set-Theme Paradox
+Set-Theme Powerlevel10k-Lean
 Set-Culture en-US
 
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
