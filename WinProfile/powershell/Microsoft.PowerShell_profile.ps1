@@ -17,7 +17,7 @@ function GitStat { git status }
 function GoBack { Set-Location .. }
 
 function GetMyIp { curl -L -s ifconfig.me | nali }
-function UpdateScoop { scoop update; scoop update * }
+function UpdateScoop { scoop update * }
 
 Import-Module posh-git
 Import-Module oh-my-posh
