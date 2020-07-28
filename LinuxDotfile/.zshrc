@@ -8,6 +8,7 @@ fi
 export LANG="en_US.UTF-8"
 source ~/.zplug/init.zsh
 
+
 # History config
 HISTSIZE=10000
 SAVEHIST=10000
@@ -100,15 +101,3 @@ export PATH
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 (( ! ${+functions[p10k]} )) || p10k finalize
-# WSL2 网络配置
-export WIN_IP=`cat /etc/resolv.conf | grep nameserver | awk '{print $2}'`
-sed -i '/\[http]/,$d' ~/.gitconfig
-echo -e '[http]\nproxy=socks5://'${WIN_IP}':7890\n[https]\nproxy=socks5://'${WIN_IP}':7890' >> ~/.gitconfig
-sed -i '/socks5.*/d' ~/.curlrc
-echo 'socks5='${WIN_IP}':7890' >> ~/.curlrc
-# WSL1 配置删除以上
-export ALL_PROXY=socks5://'${WIN_IP}':7890
-export all_proxy=socks5://'${WIN_IP}':7890
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
