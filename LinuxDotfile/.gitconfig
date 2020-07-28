@@ -1,6 +1,8 @@
 [user]
-	name = 
-	email = 
+	name =
+	email =
+[core]
+	autocrlf = input
 [http]
 	postBuffer = 524288000
 [http]

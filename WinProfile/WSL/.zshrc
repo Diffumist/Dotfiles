@@ -1,12 +1,22 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+if [[ ! -d ~/.zplug ]]; then
+  echo "please install zplug or run `curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh`"
+fi
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 export LANG="en_US.UTF-8"
-source ~/.zplug/init.zsh
+source ~/.zinit/bin/zinit.zsh
+
+# source ~/.zplug/init.zsh
+# export ZPLUG_HOME=/usr/share/zsh/scripts/zplug/
+# source $ZPLUG_HOME/init.zsh
+# sudo chmod +x /usr/share/zsh/scripts/zplug/init.zsh
+source /usr/share/zsh/scripts/zplug/init.zsh
 
 # History config
 HISTSIZE=10000
@@ -71,6 +81,7 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+
 export NVM_LAZY_LOAD=true
 
 eval $(thefuck --alias FUCK)
@@ -92,23 +103,11 @@ unset __conda_setup
 # >>> PATH
 # /bin:/usr/bin:/usr/local/bin:
 PATH=~/.local/bin:${PATH}
-export PATH
+export PATH="$PATH:/mnt/c/WINDOWS:/mnt/c/WINDOWS/system32"
+export PATH="$PATH:/mnt/c/Users/Spencer/AppData/Local/Programs/Microsoft VS Code/bin"
 # >>> Proxy
 # export ALL_PROXY=socks5://127.0.0.1:7891
-# export all_proxy=socks5://127.0.0.1:7891 
+# export all_proxy=socks5://127.0.0.1:7891
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-(( ! ${+functions[p10k]} )) || p10k finalize
-# WSL2 网络配置
-export WIN_IP=`cat /etc/resolv.conf | grep nameserver | awk '{print $2}'`
-sed -i '/\[http]/,$d' ~/.gitconfig
-echo -e '[http]\nproxy=socks5://'${WIN_IP}':7890\n[https]\nproxy=socks5://'${WIN_IP}':7890' >> ~/.gitconfig
-sed -i '/socks5.*/d' ~/.curlrc
-echo 'socks5='${WIN_IP}':7890' >> ~/.curlrc
-# WSL1 配置删除以上
-export ALL_PROXY=socks5://'${WIN_IP}':7890
-export all_proxy=socks5://'${WIN_IP}':7890
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh

@@ -1,6 +1,6 @@
 [user]
-	name = 
-	email = 
+	name =
+	email =
 [http]
 	postBuffer = 524288000
 [core]
@@ -13,5 +13,5 @@
 [credential]
 	helper = cache
 [commit]
-	gpgsign = 
+	gpgsign =
 
