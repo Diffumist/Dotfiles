@@ -52,8 +52,6 @@ zplug "b4b4r07/emoji-cli", \
 zplug "felixr/docker-zsh-completion", defer:2
 zplug "esc/conda-zsh-completion", defer:2
 zplug "zsh-users/zsh-completions"
-zplug "lukechilds/zsh-nvm"
-zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "rimraf/k"
@@ -72,7 +70,6 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
-export NVM_LAZY_LOAD=true
 
 eval $(thefuck --alias FUCK)
 # >>> conda initialize >>>
@@ -96,7 +93,7 @@ PATH=~/.local/bin:${PATH}
 export PATH
 # >>> Proxy
 # export ALL_PROXY=socks5://127.0.0.1:7891
-# export all_proxy=socks5://127.0.0.1:7891 
+# export all_proxy=socks5://127.0.0.1:7891
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

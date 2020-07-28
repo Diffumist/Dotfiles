@@ -61,8 +61,6 @@ zplug "b4b4r07/emoji-cli", \
 zplug "felixr/docker-zsh-completion", defer:2
 zplug "esc/conda-zsh-completion", defer:2
 zplug "zsh-users/zsh-completions"
-zplug "lukechilds/zsh-nvm"
-zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "rimraf/k"
@@ -82,7 +80,6 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-export NVM_LAZY_LOAD=true
 
 eval $(thefuck --alias FUCK)
 # >>> conda initialize >>>
