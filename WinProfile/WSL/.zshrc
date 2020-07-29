@@ -64,6 +64,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search", defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "rimraf/k"
+zplug "sobolevn/wakatime-zsh-plugin"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 # Can manage local plugins
@@ -103,8 +104,32 @@ PATH=~/.local/bin:${PATH}
 export PATH="$PATH:/mnt/c/WINDOWS:/mnt/c/WINDOWS/system32"
 export PATH="$PATH:/mnt/c/Users/Spencer/AppData/Local/Programs/Microsoft VS Code/bin"
 # >>> Proxy
-# export ALL_PROXY=socks5://127.0.0.1:7891
-# export all_proxy=socks5://127.0.0.1:7891
+if [ ! -f "$gitconfig" ]; then
+    touch "$gitconfig"
+fi
+if [ ! -f "$curlrc" ]; then
+    touch "$curlrc"
+fi
+
+wslnet1(){
+    sed -i '/\[http]/,$d' ~/.gitconfig
+    echo -e '[http]\nproxy=socks5://127.0.0.1:7890\n[https]\nproxy=socks5://127.0.0.1:7890' >> ~/.gitconfig
+    sed -i '/socks5.*/d' ~/.curlrc
+    echo 'socks5=127.0.0.1:7890' >> ~/.curlrc
+    export ALL_PROXY=socks5://127.0.0.1:7890
+    export all_proxy=socks5://127.0.0.1:7890
+}
+
+wslnet2(){
+    export WIN_IP=`cat /etc/resolv.conf | grep nameserver | awk '{print $2}'`
+    sed -i '/\[http]/,$d' ~/.gitconfig
+    echo -e '[http]\nproxy=socks5://'${WIN_IP}':7890\n[https]\nproxy=socks5://'${WIN_IP}':7890' >> ~/.gitconfig
+    sed -i '/socks5.*/d' ~/.curlrc
+    echo 'socks5='${WIN_IP}':7890' >> ~/.curlrc
+    export ALL_PROXY=socks5://'${WIN_IP}':7890
+    export all_proxy=socks5://'${WIN_IP}':7890
+}
+wslnet2
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

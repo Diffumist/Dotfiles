@@ -55,6 +55,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search", defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "rimraf/k"
+zplug "sobolevn/wakatime-zsh-plugin"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 # Can manage local plugins
