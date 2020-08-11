@@ -104,6 +104,10 @@ PATH=~/.local/bin:${PATH}
 export PATH="$PATH:/mnt/c/WINDOWS:/mnt/c/WINDOWS/system32"
 export PATH="$PATH:/mnt/c/Users/Spencer/AppData/Local/Programs/Microsoft VS Code/bin"
 # >>> Proxy
+
+gitconfig=".gitconfig"
+curlrc=".curlrc"
+
 if [ ! -f "$gitconfig" ]; then
     touch "$gitconfig"
 fi
