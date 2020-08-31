@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu # Fail on errors or undeclared variables
+set -euo pipefail # Fail on errors or undeclared variables
 
 printable_colours=256
 
