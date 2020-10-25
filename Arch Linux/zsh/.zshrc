@@ -54,6 +54,7 @@ zinit wait'!0' lucid for \
 zinit wait'!1' lucid for \
     laggardkernel/zsh-thefuck \
     lukechilds/zsh-better-npm-completion \
+    sobolevn/wakatime-zsh-plugin \
 
 # >> completions 
 
@@ -124,26 +125,29 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O 
 
 # >>> proxy
 proxy(){
-    export ALL_PROXY=socks5://127.0.0.1:7891
-    export all_proxy=socks5://127.0.0.1:7891
+    export ALL_PROXY=socks5://127.0.0.1:7890
+    export all_proxy=socks5://127.0.0.1:7890
 }
-
+proxy
 myip(){
-    curl -L -s ipconfig.me
+    curl -L -s ipconfig.me|nali
 }
 
 #alias
-# alias ls='exa'
+alias ls='exa'
 #alias rm='rm -i'
-# alias cat='bat'
-# alias tree='exa -T'
-# alias ps='procs'
-# alias vim='nvim'
+alias cat='bat'
+alias tree='exa -T'
+alias ps='procs'
+alias vim='nvim'
+# ZSH_nomatch
+setopt no_nomatch
 
 # >>> PATH
 # /bin:/usr/bin:/usr/local/bin:
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 export PROMPT_EOL_MARK=""
 export RUST_BACKTRACE=1
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -152,5 +156,8 @@ export RUST_BACKTRACE=1
 # (( ! ${+functions[p10k]} )) || p10k finalize
 # zprof
 
-# export VOLTA_HOME="$HOME/.volta"
-# export PATH="$VOLTA_HOME/bin:$PATH"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# added by travis gem
+[ ! -s /home/diffumist/.travis/travis.sh ] || source /home/diffumist/.travis/travis.sh

@@ -1,6 +1,4 @@
-#!/bin/bash
-
-set -euo pipefail
+#!/bin/sh
 
 tmp=${TMPDIR-/tmp}/pacman-disowned-$UID-$$
 db=$tmp/db
