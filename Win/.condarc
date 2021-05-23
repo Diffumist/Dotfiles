@@ -1,4 +1,0 @@
-channels:
-  - https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
-  - defaults
-auto_activate_base: false

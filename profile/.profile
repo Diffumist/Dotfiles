@@ -1,0 +1,36 @@
+# https://wiki.archlinux.org/title/XDG_Base_Directory#Support
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+
+export KDEHOME="$XDG_CONFIG_HOME"/KDE
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+# export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+# PATH
+export PATH="$HOME/.local/bin:$PATH"
+export PATH=/bin:/usr/bin:/usr/local/bin:{$PATH}
+# Rust
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export RUST_BACKTRACE=1
+export CARGO_HOME=$XDG_DATA_HOME/cargo
+export PATH="$CARGO_HOME/bin/:$PATH"
+# JavaScript
+export VOLTA_HOME="$XDG_DATA_HOME/volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+# Go
+export GOPATH="$XDG_DATA_HOME"/go
+# Java
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export ANDROID_SDK_ROOT="$XDG_DATA_HOME"/android
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
+# VScode
+export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
+# Wine
+export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
+# Other
+export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export LESSHISTFILE=-
+export PROMPT_EOL_MARK=""

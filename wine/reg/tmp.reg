@@ -1,0 +1,25 @@
+REGEDIT4
+[HKEY_CURRENT_USER\Software\Wine\Fonts\Replacements]
+"DFKai-SB"="NotoSansCJK-Regular"
+"FangSong"="NotoSansCJK-Regular"
+"KaiTi"="NotoSansCJK-Regular"
+"Microsoft JhengHei"="NotoSansCJK-Regular"
+"Microsoft YaHei"="NotoSansCJK-Regular"
+"MingLiU"="NotoSansCJK-Regular"
+"NSimSun"="NotoSansCJK-Regular"
+"PMingLiU"="NotoSansCJK-Regular"
+"SimHei"="NotoSansCJK-Regular"
+"SimKai"="NotoSansCJK-Regular"
+"SimSun"="NotoSansCJK-Regular"
+
+REGEDIT4
+[HKEY_CURRENT_USER\Software\Wine\X11 Driver]
+"ClientSideAntiAliasWithCore"="N"
+"ClientSideAntiAliasWithRender"="N"
+"ClientSideWithRender"="N"
+ 
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"FontSmoothing"="2"
+"FontSmoothingType"=dword:00000002
+"FontSmoothingGamma"=dword:00000578
+"FontSmoothingOrientation"=dword:00000001
