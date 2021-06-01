@@ -1,5 +1,5 @@
-# Dotfile
-## Linux
+# Dotfiles
+## Arch Linux
 
 Use `stow` command to apply the changes controlled by GNU Stow
 ```
@@ -9,6 +9,7 @@ stow dir
 
 ```
 exa
-fd
+bat
 starship
 ```
+

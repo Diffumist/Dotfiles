@@ -7,8 +7,7 @@ export KDEHOME="$XDG_CONFIG_HOME"/KDE
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 # export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 # PATH
-export PATH="$HOME/.local/bin:$PATH"
-export PATH=/bin:/usr/bin:/usr/local/bin:{$PATH}
+export PATH="$HOME/.local/bin":/bin:/usr/bin:/usr/local/bin:{$PATH}
 # Rust
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export RUST_BACKTRACE=1
@@ -31,6 +30,7 @@ export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 # Other
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
+export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export LESSHISTFILE=-
 export PROMPT_EOL_MARK=""

@@ -3,6 +3,7 @@ window:
     dimensions:
       columns: 110
       lines: 35
+    dynamic_title: true
 tabspaces: 4
 # Default shell and font
 shell:
@@ -20,10 +21,24 @@ font:
 background_opacity: 1
 live_config_reload: true
 
+mouse:
+  # Click settings
+  #
+  # The `double_click` and `triple_click` settings control the time
+  # alacritty should wait for accepting multiple clicks as one double
+  # or triple click.
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: true
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
 # Bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
 
-#From https://github.com/alebelcor/alacritty-snazzy
+# From https://github.com/alebelcor/alacritty-snazzy
 colors:
   primary:
     background: '#272727'
